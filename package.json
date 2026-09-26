@@ -1,0 +1,21 @@
+{
+  "name": "cbd-catalog",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "repos": "rm -rf repos && mkdir repos && for r in $(gh repo list jagreehal --topic cbd-publisher --json name --jq '.[].name'); do git clone -q --depth 1 https://github.com/jagreehal/$r repos/$r; done && ls repos",
+    "check": "node --test generators/*.test.mjs",
+    "generate": "eventcatalog generate",
+    "dev": "eventcatalog dev",
+    "build": "eventcatalog build"
+  },
+  "dependencies": {
+    "@eventcatalog/core": "^4.3.4",
+    "@eventcatalog/sdk": "^2.26.3",
+    "yaml": "^2.7.0"
+  },
+  "packageManager": "pnpm@9.15.0"
+}

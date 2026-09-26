@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.eventcatalog-core/
+.astro/
+public/pagefind/
+# cloned and generated on every build
+repos/
+docs/
+domains/
+.DS_Store
