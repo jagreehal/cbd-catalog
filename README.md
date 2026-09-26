@@ -2,9 +2,9 @@
 
 The company contract catalog: **https://jagreehal.github.io/cbd-catalog/**
 
-EventCatalog over every public repository tagged `cbd-publisher`. Events come
-from each repo's `contracts/events/*.json` (with `x-eventcatalog` metadata);
-docs come from `docs/`. Nothing in this repo names a publisher.
+EventCatalog over the public repositories tagged `cbd-publisher`. The
+generators read events from `contracts/events/*.json`, with `x-eventcatalog`
+metadata, and pages from `docs/`. This repo names no publisher.
 
 ```sh
 pnpm install
@@ -16,13 +16,12 @@ pnpm run generate && pnpm run dev
 
 | Repo | Role |
 |---|---|
-| [cbd-handbook](https://github.com/jagreehal/cbd-handbook) | Owns the convention: docs frontmatter schema, docs checker, company policy |
-| [cbd-payments-service](https://github.com/jagreehal/cbd-payments-service) | TypeScript producer: OpenAPI + event JSON Schemas + runbook |
-| [cbd-dashboard](https://github.com/jagreehal/cbd-dashboard) | TypeScript consumer: typed client generated from the pinned OpenAPI |
+| [cbd-handbook](https://github.com/jagreehal/cbd-handbook) | Owns the convention: docs frontmatter schema, docs check, company policy |
+| [cbd-payments-service](https://github.com/jagreehal/cbd-payments-service) | TypeScript producer: OpenAPI, event JSON Schemas, runbook |
+| [cbd-dashboard](https://github.com/jagreehal/cbd-dashboard) | TypeScript consumer: generates a typed client from the pinned OpenAPI |
 | [cbd-reporter](https://github.com/jagreehal/cbd-reporter) | Python consumer: validates events against the pinned JSON Schemas |
-| [cbd-docs-site](https://github.com/jagreehal/cbd-docs-site) | Aggregator: [one docs index](https://jagreehal.github.io/cbd-docs-site/) over every enrolled repo |
-| [cbd-catalog](https://github.com/jagreehal/cbd-catalog) | Aggregator: [EventCatalog](https://jagreehal.github.io/cbd-catalog/) over every enrolled repo |
+| [cbd-docs-site](https://github.com/jagreehal/cbd-docs-site) | Aggregator: [docs index](https://jagreehal.github.io/cbd-docs-site/) over the enrolled repos |
+| [cbd-catalog](https://github.com/jagreehal/cbd-catalog) | Aggregator: [EventCatalog](https://jagreehal.github.io/cbd-catalog/) over the enrolled repos |
 
-No repository imports another's source. Consumers read committed artifacts
-at pinned tags over HTTPS; aggregators discover publishers by the
-`cbd-publisher` GitHub topic.
+Consumers fetch committed artifacts over HTTPS at a pinned tag. The
+aggregators find publishers by the `cbd-publisher` GitHub topic.
