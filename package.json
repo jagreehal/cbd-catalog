@@ -11,7 +11,7 @@
     "generate": "eventcatalog generate",
     "dev": "eventcatalog dev",
     "build": "eventcatalog build",
-    "index": "npx -y autocatalog@0.1.1 site repos --base /cbd-catalog/autocatalog/ --out dist/autocatalog"
+    "index": "pnpm --dir index install --frozen-lockfile --ignore-workspace && pnpm --dir index run build"
   },
   "dependencies": {
     "@eventcatalog/core": "^4.3.4",
