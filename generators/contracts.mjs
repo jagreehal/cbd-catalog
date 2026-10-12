@@ -33,7 +33,24 @@ export function readMetadata(schema, location) {
   return meta;
 }
 
-export default async (_, { repos, domain }) => {
+// A repository's autocatalog.consumes.json: the events its services consume,
+// by EventCatalog id. The producer does not have to list them.
+export function readDeclarations(text, location) {
+  const declarations = JSON.parse(text)?.consumes;
+  if (!Array.isArray(declarations)) throw new Error(`${location}: consumes must be an array`);
+  return declarations.map((declaration, index) => {
+    if (typeof declaration?.service !== 'string' || !identifier.test(declaration.service)) {
+      throw new Error(`${location}: consumes[${index}].service must be an identifier`);
+    }
+    const [domainId, eventId, ...rest] = String(declaration.event ?? '').split('/');
+    if (rest.length > 0 || !identifier.test(domainId ?? '') || !identifier.test(eventId ?? '')) {
+      throw new Error(`${location}: consumes[${index}].event must be domain/id`);
+    }
+    return { service: declaration.service, event: eventId };
+  });
+}
+
+export default async (_, { repos, consumers = [], domain }) => {
   const projectDir = process.env.PROJECT_DIR || process.cwd();
   const { writeEvent, addSchemaToEvent, writeService, writeDomain } = utils(projectDir);
 
@@ -49,6 +66,7 @@ export default async (_, { repos, domain }) => {
   };
 
   const seen = new Map(); // event id → repo that defined it
+  const versions = new Map(); // event id → version
   for (const repoPath of repos) {
     const repo = basename(repoPath);
     const dir = join(projectDir, repoPath, 'contracts', 'events');
@@ -85,7 +103,23 @@ export default async (_, { repos, domain }) => {
 
       for (const s of meta.producers ?? []) service(s).sends.push({ id, version });
       for (const s of meta.consumers ?? []) service(s).receives.push({ id, version });
+      versions.set(id, version);
       console.log(`documented ${id} (v${version}) from ${repo}`);
+    }
+  }
+
+  // Consumers that declare themselves in their own repository.
+  for (const repoPath of consumers) {
+    const location = `${basename(repoPath)}/autocatalog.consumes.json`;
+    const text = readFileSync(join(projectDir, repoPath, 'autocatalog.consumes.json'), 'utf8');
+    for (const { service: id, event } of readDeclarations(text, location)) {
+      const version = versions.get(event);
+      if (!version) {
+        console.warn(`${location}: ${event} is not in the catalog`);
+        continue;
+      }
+      const { receives } = service(id);
+      if (!receives.some((ref) => ref.id === event)) receives.push({ id: event, version });
     }
   }
 

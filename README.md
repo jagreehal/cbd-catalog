@@ -23,6 +23,11 @@ pnpm run generate && pnpm run dev
 | [cbd-docs-site](https://github.com/jagreehal/cbd-docs-site) | Aggregator: [docs index](https://jagreehal.github.io/cbd-docs-site/) over the enrolled repos |
 | [cbd-catalog](https://github.com/jagreehal/cbd-catalog) | Aggregator: [EventCatalog](https://jagreehal.github.io/cbd-catalog/) over the enrolled repos |
 
+A consumer can also declare what it reads in its own `autocatalog.consumes.json`.
+The build adds those consumers to the catalog, and publishes the autocatalog
+index at [`/cbd-catalog/autocatalog/catalog.json`](https://jagreehal.github.io/cbd-catalog/autocatalog/catalog.json),
+which a producer's pull request reads with `autocatalog drift --consumers`.
+
 Consumers fetch committed artifacts over HTTPS at a pinned tag. The
 aggregators find publishers by the `cbd-publisher` GitHub topic.
 

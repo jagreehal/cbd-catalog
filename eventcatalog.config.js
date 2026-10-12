@@ -36,6 +36,7 @@ export default {
       './generators/contracts.mjs',
       {
         repos: repos.filter((repo) => has(repo, 'contracts/events')).map((repo) => `repos/${repo}`),
+        consumers: repos.filter((repo) => has(repo, 'autocatalog.consumes.json')).map((repo) => `repos/${repo}`),
         domain: {
           id: 'payments',
           name: 'Payments',
