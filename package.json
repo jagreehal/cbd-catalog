@@ -10,7 +10,8 @@
     "check": "node --test generators/*.test.mjs",
     "generate": "eventcatalog generate",
     "dev": "eventcatalog dev",
-    "build": "eventcatalog build"
+    "build": "eventcatalog build",
+    "index": "npx -y autocatalog@0.1.1 site repos --base /cbd-catalog/autocatalog/ --out dist/autocatalog"
   },
   "dependencies": {
     "@eventcatalog/core": "^4.3.4",

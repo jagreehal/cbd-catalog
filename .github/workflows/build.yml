@@ -34,6 +34,9 @@ jobs:
       - run: pnpm run check
       - run: pnpm run generate
       - run: pnpm run build
+      # The autocatalog index beside the catalog: every repository's declared
+      # consumers, which a producer's pull request reads with `autocatalog drift --consumers`.
+      - run: pnpm run index
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

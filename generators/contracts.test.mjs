@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { readMetadata } from './contracts.mjs';
+import { readDeclarations, readMetadata } from './contracts.mjs';
 
 const location = '../producer/contracts/events/example.json';
 
@@ -52,5 +52,33 @@ test('rejects path traversal and malformed relationships', () => {
       location
     ),
     /x-eventcatalog.consumers/
+  );
+});
+
+test('reads the consumers a repository declares, by event id', () => {
+  const text = JSON.stringify({
+    consumes: [
+      { service: 'reporter', event: 'payment/payment.completed', fields: ['payment.amount'] },
+      { service: 'reporter', event: 'payment/payment.failed' },
+    ],
+  });
+
+  assert.deepEqual(readDeclarations(text, 'reporter/autocatalog.consumes.json'), [
+    { service: 'reporter', event: 'payment.completed' },
+    { service: 'reporter', event: 'payment.failed' },
+  ]);
+});
+
+test('rejects a declaration that is not one', () => {
+  const location = 'reporter/autocatalog.consumes.json';
+
+  assert.throws(() => readDeclarations('{}', location), /consumes must be an array/);
+  assert.throws(
+    () => readDeclarations(JSON.stringify({ consumes: [{ service: '../x', event: 'p/e' }] }), location),
+    /service/
+  );
+  assert.throws(
+    () => readDeclarations(JSON.stringify({ consumes: [{ service: 'x', event: 'payment.completed' }] }), location),
+    /event/
   );
 });
