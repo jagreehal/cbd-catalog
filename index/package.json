@@ -7,16 +7,7 @@
     "build": "autocatalog site ../repos --base /cbd-catalog/autocatalog/ --out ../dist/autocatalog"
   },
   "devDependencies": {
-    "autocatalog": "0.1.1"
+    "autocatalog": "0.1.2"
   },
-  "packageManager": "pnpm@9.15.0",
-  "pnpm": {
-    "packageExtensions": {
-      "autocatalog-docs-astro": {
-        "dependencies": {
-          "js-yaml": "^4.1.1"
-        }
-      }
-    }
-  }
+  "packageManager": "pnpm@9.15.0"
 }
