@@ -4,15 +4,13 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-packageExtensionsChecksum: 523fce792193369ed7e62c5d849c50be
-
 importers:
 
   .:
     devDependencies:
       autocatalog:
-        specifier: 0.1.1
-        version: 0.1.1(@astrojs/markdown-remark@7.3.2)(@types/node@24.19.2)(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(jiti@2.7.0)(typescript@6.0.3)(vite@8.3.4(@types/node@24.19.2)(jiti@2.7.0)(yaml@2.9.1))
+        specifier: 0.1.2
+        version: 0.1.2(@astrojs/markdown-remark@7.3.2)(@types/node@24.19.2)(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(jiti@2.7.0)(typescript@6.0.3)(vite@8.3.4(@types/node@24.19.2)(jiti@2.7.0)(yaml@2.9.1))
 
 packages:
 
@@ -1620,8 +1618,8 @@ packages:
   autocatalog-agents-mcp@0.2.1:
     resolution: {integrity: sha512-kqCUaVaQCpYTNbDVLWW7K3VVtKdvvpZFd1dMtxzo0ANFG4UN//f9uSIhXLOsxNNBBRp55D3ALy/GfqfCgv5S1Q==}
 
-  autocatalog-cli@0.2.0:
-    resolution: {integrity: sha512-RvB0wvJS/pYw4mEMCagDujsrNcVPEVumk/P5T8w68dxy0LXh4xNVYRGedlkBEDG2i5A4+ugUQfRbjl6Zyb4WBQ==}
+  autocatalog-cli@0.2.1:
+    resolution: {integrity: sha512-m0zcC2NVzOHsYwHsuqIyg4tMYLQsD7TluFvCsnmPphN/1e/GjKBeSysoAmUmSjt9wXzCUh1K+dNZ4jd0gVBrQQ==}
     engines: {node: '>=24'}
     hasBin: true
 
@@ -1629,8 +1627,8 @@ packages:
     resolution: {integrity: sha512-hHeOAQQDu/o38hDTsbPhqrR82bgmoYse+EmfYndJwliJxsQnBGuMbB/cG6eb159AQW2uYXo++kYyeOTzo3xLPQ==}
     engines: {node: '>=24'}
 
-  autocatalog-docs-astro@0.2.0:
-    resolution: {integrity: sha512-XiGhx8sCnfja8wro5aJm6cTwoel9mnidH2F0vcRTYZ4TH682hm+qVkrKKzQWr8hJRpNw6ybDQd0Cf3UoHoVFhQ==}
+  autocatalog-docs-astro@0.2.1:
+    resolution: {integrity: sha512-fcYa44adacqkHiELWfDMv78KpzG8PTmXt5e6xWUkkoNAMjIuZ2FQ4YDuByHOsCIRiJR+JM0JDnOaiz0CDrcKSg==}
     engines: {node: '>=24'}
     peerDependencies:
       '@astrojs/starlight': '>=0.41.0'
@@ -1640,8 +1638,8 @@ packages:
     resolution: {integrity: sha512-c6S7b7chq77hK6ou1uOSTJ0hD15869oPmwJMvAocnxk4L24v1yyE3unH0ODuMAVh1GvO5DDqaWlJiA5EfMC5Iw==}
     engines: {node: '>=24'}
 
-  autocatalog@0.1.1:
-    resolution: {integrity: sha512-sdZUCCj3gD0pMPxUeH01rYWt0oXE+jxU1DC95H7pHnOSBU+tG4TaYrcAed7veeY5x+ELle3nwPSlnGqXjeX3Og==}
+  autocatalog@0.1.2:
+    resolution: {integrity: sha512-eqcw+Tx7GT/wHkWZaPOhxj3NPii3eChhyMadtgROsGceSIQLPJbxtLFPeWZtL77P+xRBBaJ1BoxZ0KBaW2U9Pg==}
     engines: {node: '>=24'}
     hasBin: true
 
@@ -6225,7 +6223,7 @@ snapshots:
       - supports-color
     optional: true
 
-  autocatalog-cli@0.2.0(@astrojs/markdown-remark@7.3.2)(@types/node@24.19.2)(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(jiti@2.7.0)(typescript@6.0.3)(vite@8.3.4(@types/node@24.19.2)(jiti@2.7.0)(yaml@2.9.1)):
+  autocatalog-cli@0.2.1(@astrojs/markdown-remark@7.3.2)(@types/node@24.19.2)(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(jiti@2.7.0)(typescript@6.0.3)(vite@8.3.4(@types/node@24.19.2)(jiti@2.7.0)(yaml@2.9.1)):
     dependencies:
       '@astrojs/starlight': 0.42.6(@astrojs/markdown-remark@7.3.2)(astro@7.3.8(@astrojs/markdown-remark@7.3.2)(@types/node@24.19.2)(jiti@2.7.0)(yaml@2.9.1))(typescript@6.0.3)
       '@aws-sdk/client-glue': 3.1149.0
@@ -6234,7 +6232,7 @@ snapshots:
       autocatalog-adapter-zod: 0.2.0
       autocatalog-agents-core: 0.2.1
       autocatalog-core: 0.2.0
-      autocatalog-docs-astro: 0.2.0(@astrojs/starlight@0.42.6(@astrojs/markdown-remark@7.3.2)(astro@7.3.8(@astrojs/markdown-remark@7.3.2)(@types/node@24.19.2)(jiti@2.7.0)(yaml@2.9.1))(typescript@6.0.3))(@types/node@24.19.2)(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(astro@7.3.8(@astrojs/markdown-remark@7.3.2)(@types/node@24.19.2)(jiti@2.7.0)(yaml@2.9.1))(jiti@2.7.0)(vite@8.3.4(@types/node@24.19.2)(jiti@2.7.0)(yaml@2.9.1))(yaml@2.9.1)
+      autocatalog-docs-astro: 0.2.1(@astrojs/starlight@0.42.6(@astrojs/markdown-remark@7.3.2)(astro@7.3.8(@astrojs/markdown-remark@7.3.2)(@types/node@24.19.2)(jiti@2.7.0)(yaml@2.9.1))(typescript@6.0.3))(@types/node@24.19.2)(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(astro@7.3.8(@astrojs/markdown-remark@7.3.2)(@types/node@24.19.2)(jiti@2.7.0)(yaml@2.9.1))(jiti@2.7.0)(vite@8.3.4(@types/node@24.19.2)(jiti@2.7.0)(yaml@2.9.1))(yaml@2.9.1)
       autocatalog-docs-core: 0.1.1
       commander: 15.0.0
       kleur: 4.1.5
@@ -6295,7 +6293,7 @@ snapshots:
       yaml: 2.9.1
       zod: 4.6.7
 
-  autocatalog-docs-astro@0.2.0(@astrojs/starlight@0.42.6(@astrojs/markdown-remark@7.3.2)(astro@7.3.8(@astrojs/markdown-remark@7.3.2)(@types/node@24.19.2)(jiti@2.7.0)(yaml@2.9.1))(typescript@6.0.3))(@types/node@24.19.2)(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(astro@7.3.8(@astrojs/markdown-remark@7.3.2)(@types/node@24.19.2)(jiti@2.7.0)(yaml@2.9.1))(jiti@2.7.0)(vite@8.3.4(@types/node@24.19.2)(jiti@2.7.0)(yaml@2.9.1))(yaml@2.9.1):
+  autocatalog-docs-astro@0.2.1(@astrojs/starlight@0.42.6(@astrojs/markdown-remark@7.3.2)(astro@7.3.8(@astrojs/markdown-remark@7.3.2)(@types/node@24.19.2)(jiti@2.7.0)(yaml@2.9.1))(typescript@6.0.3))(@types/node@24.19.2)(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(astro@7.3.8(@astrojs/markdown-remark@7.3.2)(@types/node@24.19.2)(jiti@2.7.0)(yaml@2.9.1))(jiti@2.7.0)(vite@8.3.4(@types/node@24.19.2)(jiti@2.7.0)(yaml@2.9.1))(yaml@2.9.1):
     dependencies:
       '@astrojs/markdown-remark': 7.3.2
       '@astrojs/react': 7.0.1(@types/node@24.19.2)(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(jiti@2.7.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(yaml@2.9.1)
@@ -6351,9 +6349,9 @@ snapshots:
       autocatalog-core: 0.2.0
       zod: 4.6.7
 
-  autocatalog@0.1.1(@astrojs/markdown-remark@7.3.2)(@types/node@24.19.2)(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(jiti@2.7.0)(typescript@6.0.3)(vite@8.3.4(@types/node@24.19.2)(jiti@2.7.0)(yaml@2.9.1)):
+  autocatalog@0.1.2(@astrojs/markdown-remark@7.3.2)(@types/node@24.19.2)(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(jiti@2.7.0)(typescript@6.0.3)(vite@8.3.4(@types/node@24.19.2)(jiti@2.7.0)(yaml@2.9.1)):
     dependencies:
-      autocatalog-cli: 0.2.0(@astrojs/markdown-remark@7.3.2)(@types/node@24.19.2)(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(jiti@2.7.0)(typescript@6.0.3)(vite@8.3.4(@types/node@24.19.2)(jiti@2.7.0)(yaml@2.9.1))
+      autocatalog-cli: 0.2.1(@astrojs/markdown-remark@7.3.2)(@types/node@24.19.2)(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(jiti@2.7.0)(typescript@6.0.3)(vite@8.3.4(@types/node@24.19.2)(jiti@2.7.0)(yaml@2.9.1))
     transitivePeerDependencies:
       - '@astrojs/markdown-remark'
       - '@azure/app-configuration'
