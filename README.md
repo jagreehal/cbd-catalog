@@ -31,9 +31,8 @@ GitHub Actions rebuilds it hourly, on push, and when you run the workflow by han
 
 ```sh
 pnpm install
-pnpm run build      # clone enrolled repos into .autocatalog/repos and build dist/
-pnpm run manifest   # write dist/contracts/docs-manifest.json
-pnpm run dev        # the same site with live reload
+pnpm run build   # clone enrolled repos into .autocatalog/repos and build dist/
+pnpm run dev     # the same site with live reload
 ```
 
 ## The six repositories

@@ -7,11 +7,10 @@
   },
   "scripts": {
     "build": "autocatalog site --topic cbd-publisher --owner jagreehal --base /cbd-catalog/ --site https://jagreehal.github.io --title 'cbd catalog'",
-    "manifest": "autocatalog docs manifest .autocatalog/repos --manifest dist/contracts/docs-manifest.json",
-    "dev": "autocatalog site --topic cbd-publisher --owner jagreehal --base /cbd-catalog/ --dev"
+    "dev": "pnpm run build --dev"
   },
   "devDependencies": {
-    "autocatalog": "0.1.3"
+    "autocatalog": "0.1.4"
   },
   "packageManager": "pnpm@9.15.0"
 }

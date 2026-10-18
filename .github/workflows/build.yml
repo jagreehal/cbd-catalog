@@ -28,13 +28,11 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       # Clones every public repo tagged cbd-publisher, with history for git dates,
-      # and builds docs, events, services, fields, llms.txt and catalog.json.
+      # and builds docs, events, services, fields, llms.txt, catalog.json and
+      # contracts/docs-manifest.json, which each publisher's docs check reads.
       - run: pnpm run build
         env:
           GH_TOKEN: ${{ github.token }}
-      # Each publisher's docs check reads this manifest. The step goes once the
-      # site publishes contracts/docs-manifest.json itself.
-      - run: pnpm run manifest
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
